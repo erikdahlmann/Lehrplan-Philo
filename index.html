@@ -1,0 +1,1292 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Philosophie am Paul-Klee-Gymnasium · Schulinterner Lehrplan EF bis Q2</title>
+<meta name="description" content="Der schulinterne Lehrplan Philosophie des Paul-Klee-Gymnasiums Overath: alle Themen und Kompetenzen der Oberstufe (EF, Q1, Q2).">
+<style>
+:root{
+  --ink:#22222a;
+  --ink-soft:#5c5c66;
+  --paper:#fbfaf7;
+  --card:#ffffff;
+  --line:#e6e3dc;
+  --if1:#e2653f; --if1-soft:#fbe9e2;
+  --if2:#3f6fae; --if2-soft:#e6edf7;
+  --if3:#f0b429; --if3-soft:#fdf3d7;
+  --if4:#3d8f6f; --if4-soft:#e2f1ea;
+  --if5:#a8474e; --if5-soft:#f6e6e7;
+  --if6:#6f5a9e; --if6-soft:#ece7f5;
+  --blue:#3f6fae;
+  --radius:14px;
+  --shadow:0 1px 2px rgba(60,50,30,.06),0 8px 24px rgba(60,50,30,.07);
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+body{
+  font-family:ui-sans-serif,-apple-system,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;
+  background:var(--paper);color:var(--ink);line-height:1.55;
+  -webkit-font-smoothing:antialiased;
+}
+.wrap{max-width:1080px;margin:0 auto;padding:0 20px}
+
+/* ---------- Kopf ---------- */
+header.top{border-bottom:1px solid var(--line);background:var(--card)}
+.top-inner{display:flex;align-items:center;justify-content:space-between;height:60px}
+.brand{display:flex;align-items:center;gap:10px;font-weight:700;font-size:.95rem;letter-spacing:.01em}
+.brand .mark{display:flex;gap:3px}
+.brand .mark i{width:12px;height:12px;border-radius:3px;display:block}
+.brand .mark i:nth-child(1){background:var(--if1)}
+.brand .mark i:nth-child(2){background:var(--if2);border-radius:50%}
+.brand .mark i:nth-child(3){background:var(--if3)}
+.top-note{font-size:.85rem;color:var(--ink-soft)}
+@media(max-width:560px){.top-note{display:none}}
+
+/* ---------- Hero ---------- */
+.hero{padding:28px 0 34px}
+.sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
+.intro-film{display:block;width:100%;max-width:920px;height:auto;margin:0 auto}
+.legend{margin-top:22px;display:flex;flex-wrap:wrap;gap:8px;justify-content:center}
+.legend span{display:inline-flex;align-items:center;gap:7px;font-size:.8rem;font-weight:600;color:var(--ink);
+  background:var(--card);border:1px solid var(--line);border-radius:999px;padding:5px 12px}
+.legend i{width:9px;height:9px;border-radius:3px;display:inline-block}
+@media(max-width:820px){.hero{padding-top:18px}}
+
+/* ---------- Stufenwahl ---------- */
+.stufen-block{padding:8px 0 12px}
+.stufen-block h2{font-size:.95rem;font-weight:700;color:var(--ink-soft);margin-bottom:14px}
+.stufen{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;max-width:640px}
+.stufe-btn{
+  appearance:none;border:1px solid var(--line);background:var(--card);border-radius:12px;
+  padding:14px 6px 11px;cursor:pointer;text-align:center;font-family:inherit;color:var(--ink);
+  transition:transform .18s cubic-bezier(.16,1,.3,1),box-shadow .18s,border-color .18s;
+}
+.stufe-btn:hover{transform:translateY(-2px);box-shadow:var(--shadow)}
+.stufe-btn:active{transform:translateY(0) scale(.98)}
+.stufe-btn:focus-visible{outline:3px solid var(--blue);outline-offset:2px}
+.stufe-btn .num{display:block;font-size:1.35rem;font-weight:800;letter-spacing:-.02em;line-height:1.1}
+.stufe-btn .sub{display:block;font-size:.7rem;color:var(--ink-soft);margin-top:3px}
+.stufe-btn .dot{display:block;width:26px;height:6px;border-radius:3px;margin:8px auto 0;background:var(--line);transition:background .18s}
+.stufe-btn[aria-pressed="true"]{border-color:var(--ink);box-shadow:var(--shadow)}
+.stufe-btn[aria-pressed="true"] .dot{background:var(--tile,var(--if1))}
+@media (prefers-reduced-motion:reduce){.stufe-btn{transition:none}}
+
+/* ---------- Stufenansicht ---------- */
+.view{padding:34px 0 20px}
+.view-head{display:flex;flex-wrap:wrap;align-items:baseline;gap:12px 18px;margin-bottom:6px}
+.view-head h2{font-size:clamp(1.4rem,3vw,2rem);letter-spacing:-.015em;font-weight:800}
+.view-head .summe{font-size:.85rem;color:var(--ink-soft);font-weight:600}
+.kurs-toggle{display:inline-flex;border:1px solid var(--line);border-radius:999px;background:var(--card);padding:3px}
+.kurs-toggle button{appearance:none;border:0;background:transparent;font-family:inherit;font-size:.85rem;font-weight:700;
+  color:var(--ink-soft);padding:6px 16px;border-radius:999px;cursor:pointer}
+.kurs-toggle button[aria-pressed="true"]{background:var(--ink);color:#fff}
+.kurs-toggle button:focus-visible{outline:3px solid var(--blue);outline-offset:2px}
+.view p.intro{color:var(--ink-soft);max-width:62ch;margin-bottom:26px}
+
+/* ---------- UV-Karten ---------- */
+.uv-list{display:flex;flex-direction:column;gap:14px;padding-bottom:56px}
+.uv{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);overflow:hidden;border-left:6px solid var(--feld,var(--if1))}
+.uv-head{display:flex;align-items:center;gap:16px;width:100%;appearance:none;border:0;background:transparent;
+  font-family:inherit;text-align:left;padding:16px 18px;cursor:pointer;color:var(--ink)}
+.uv-head:focus-visible{outline:3px solid var(--blue);outline-offset:-3px}
+.uv-num{flex:0 0 auto;width:44px;height:44px;border-radius:12px;display:flex;align-items:center;justify-content:center;
+  font-weight:800;font-size:.9rem;background:var(--feld-soft,var(--if1-soft));color:var(--ink)}
+.uv-titel{flex:1 1 auto;min-width:0}
+.uv-titel .t{display:block;font-weight:700;font-size:1.02rem;line-height:1.3}
+.uv-titel .f{display:block;font-size:.78rem;color:var(--ink-soft);margin-top:2px}
+.uv-chev{flex:0 0 auto;width:22px;height:22px;color:var(--ink-soft);transition:transform .22s cubic-bezier(.16,1,.3,1)}
+.uv[data-open="true"] .uv-chev{transform:rotate(180deg)}
+@media (prefers-reduced-motion:reduce){.uv-chev{transition:none}}
+.uv-body{display:grid;grid-template-rows:0fr;transition:grid-template-rows .28s cubic-bezier(.16,1,.3,1)}
+.uv[data-open="true"] .uv-body{grid-template-rows:1fr}
+@media (prefers-reduced-motion:reduce){.uv-body{transition:none}}
+.uv-body-inner{overflow:hidden}
+.uv-content{padding:2px 18px 20px 78px;display:flex;flex-direction:column;gap:18px}
+@media(max-width:640px){.uv-content{padding-left:18px}}
+.uv-content h4{font-size:.8rem;font-weight:800;text-transform:uppercase;letter-spacing:.06em;color:var(--ink-soft);margin-bottom:8px}
+.chips{display:flex;flex-wrap:wrap;gap:7px}
+.chips span{font-size:.84rem;background:var(--feld-soft,var(--if1-soft));border-radius:8px;padding:4px 11px;font-weight:600}
+.lernen li{margin:0 0 7px 0;padding-left:26px;position:relative;font-size:.93rem}
+.lernen li::before{content:"";position:absolute;left:4px;top:.48em;width:10px;height:10px;border-radius:3px;background:var(--feld,var(--if1))}
+.lernen{list-style:none}
+.lernen.urteil li::before{border-radius:50%}
+details.original{border-top:1px dashed var(--line);padding-top:12px}
+details.original summary{cursor:pointer;font-size:.86rem;font-weight:700;color:var(--blue);list-style:none;display:flex;align-items:center;gap:7px}
+details.original summary::-webkit-details-marker{display:none}
+details.original summary::after{content:"+";font-weight:800;font-size:1rem}
+details.original[open] summary::after{content:"-"}
+details.original .orig-inner{margin-top:12px;font-size:.86rem;color:var(--ink-soft);display:flex;flex-direction:column;gap:12px}
+details.original .orig-inner h5{font-size:.78rem;text-transform:uppercase;letter-spacing:.05em;color:var(--ink);margin-bottom:5px}
+details.original .orig-inner ul{padding-left:18px}
+details.original .orig-inner li{margin-bottom:5px}
+
+/* ---------- Lernweg-Band ---------- */
+.pfad{display:flex;gap:6px;margin:6px 0 34px;height:8px;max-width:420px}
+.pfad i{flex:1;border-radius:4px;background:var(--line)}
+.pfad i.on{background:var(--tile)}
+
+/* ---------- Fuß ---------- */
+footer{border-top:1px solid var(--line);background:var(--card);padding:28px 0 40px;margin-top:20px}
+footer .cols{display:flex;flex-wrap:wrap;gap:12px 40px;justify-content:space-between;font-size:.85rem;color:var(--ink-soft)}
+footer strong{color:var(--ink)}
+</style>
+</head>
+<body>
+
+<header class="top">
+  <div class="wrap top-inner">
+    <div class="brand">
+      <span class="mark" aria-hidden="true"><i></i><i></i><i></i></span>
+      Paul-Klee-Gymnasium Overath
+    </div>
+    <div class="top-note">Fachschaft Philosophie · Schulinterner Lehrplan</div>
+  </div>
+</header>
+
+<main>
+  <div class="wrap">
+    <section class="hero">
+      <h1 class="sr-only">Schulinternes Curriculum Philosophie · Paul-Klee-Gymnasium Overath</h1>
+      <video id="introFilm" class="intro-film" autoplay muted playsinline preload="auto"
+             poster="pkg-intro-philo-ende.jpg" width="1280" height="720"
+             aria-label="Animation: Schulinternes Curriculum Philosophie, Paul-Klee-Gymnasium Overath">
+        <source src="pkg-intro-philo.mp4" type="video/mp4">
+      </video>
+      <div class="legend" id="legend" aria-label="Farblegende der Inhaltsfelder"></div>
+    </section>
+
+    <section class="stufen-block" aria-label="Stufe wählen">
+      <h2>Stufe wählen</h2>
+      <div class="stufen" id="stufen"></div>
+    </section>
+
+    <section class="view" id="view" aria-live="polite"></section>
+  </div>
+</main>
+
+<footer>
+  <div class="wrap cols">
+    <div><strong>Paul-Klee-Gymnasium Overath</strong> · Fachschaft Philosophie</div>
+    <div>Grundlage: Kernlehrplan Philosophie NRW (GOSt)</div>
+    <div>Stand: Juli 2026</div>
+  </div>
+</footer>
+
+<script id="philo-daten" type="application/json">{
+ "ifNamen": {
+  "1": "Der Mensch und sein Handeln",
+  "2": "Erkenntnis und ihre Grenzen",
+  "3": "Das Selbstverständnis des Menschen",
+  "4": "Werte und Normen des Handelns",
+  "5": "Zusammenleben in Staat und Gesellschaft",
+  "6": "Geltungsansprüche der Wissenschaften"
+ },
+ "stufen": {
+  "EF": {
+   "uvs": [
+    {
+     "thema": "Was heißt es zu philosophieren? – Welterklärungen in Mythos, Wissenschaft und Philosophie",
+     "sach": [
+      "unterscheiden philosophische Fragen von Alltagsfragen sowie von Fragen, die gesicherte wissenschaftliche Antworten ermöglichen",
+      "erläutern den grundsätzlichen Charakter philosophischen Fragens und Denkens an Beispielen",
+      "erklären Merkmale philosophischen Denkens und unterscheiden dieses von anderen Denkformen, etwa in Mythos und Naturwissenschaft."
+     ],
+     "methoden": [
+      "arbeiten aus Phänomenen der Lebenswelt und präsentativen Materialien verallgemeinernd relevante philosophische Fragen heraus (MK2)",
+      "ermitteln in einfacheren philosophischen Texten das diesen jeweils zugrundeliegende Problem bzw. ihr Anliegen sowie die zentrale These (MK3)",
+      "recherchieren Inform ationen sowie die Bedeutung von Fremdwörtern und Fachbegriffen unter Zuhilfenahme von (auch digitalen) Lexika und anderen Nachschlagewerken (MK9)."
+     ],
+     "urteil": [
+      "bewerten begründet die Bedeutsamkeit und Orienti erungsfunktion von philosophischen Fragen für ihr Leben."
+     ],
+     "handlung": [],
+     "inhaltsfelder": [
+      2
+     ],
+     "schwerpunkte": [
+      "Eigenart philosophischen Fragens und Denkens",
+      "Metaphysische Probleme als Herausforderung für die Vernunfterkenntnis"
+     ],
+     "zeit": 15,
+     "nr": "I"
+    },
+    {
+     "thema": "Ist der Mensch ein besonderes Lebewesen? – Sprachliche, kognitive und reflexive Fähigkeiten von Mensch und Tier im Vergleich",
+     "sach": [
+      "erläutern Mer kmale des Menschen als eines aus der natürlichen Evolution hervorgegangenen Lebewesens und erklären wesentliche Unterschiede zwischen Mensch und Tier bzw. anderen nicht-menschlichen Lebensformen (u. a. Sprache, Selbstbewusstsein)",
+      "analysieren einen anthrop ologischen Ansatz zur Bestimmung des Unterschiedes von Mensch und Tier auf der Basis ihrer gemeinsamen evolutionären Herkunft in seinen Grundgedanken."
+     ],
+     "methoden": [
+      "analysieren die gedankliche Abfolge von philosophischen Texten und interpretieren wesentliche Aussagen (MK5)",
+      "bestimmen elementare philosophische Begriffe mit Hilfe definitorischer Verfahren (MK7)",
+      "recherchieren Informationen sowie die Bedeutung von Fremdwörtern und Fachbegriffen unter Zuhilfenahme von (auch digitalen) Lexika und anderen Nachschlagewerken (MK9).",
+      "stellen grundlegende philosophische Sachverhalte in diskursiver Form strukturiert dar (MK10)."
+     ],
+     "urteil": [
+      "erörtern Konsequenzen, die sich aus der Sonderstellung des Menschen im Reich des Lebendigen ergeben, sowie die damit verbundenen Chancen und Risiken",
+      "bewerten die erarbeiteten anthropologischen Ansätze zur Bestimmung des Unterschiedes von Mensch und Tier hinsichtlich des Einbezugs wesentlicher Aspekte des Menschseins."
+     ],
+     "handlung": [
+      "beteiligen sich mit philosophisch dimensionierten Beiträgen an der Diskussion allgemein - menschlicher Fragestellungen (HK4)."
+     ],
+     "inhaltsfelder": [
+      1,
+      2
+     ],
+     "schwerpunkte": [
+      "Die Sonderstellung des Menschen",
+      "Prinzipien und Reichweite menschlicher Erkenntnis"
+     ],
+     "zeit": 15,
+     "nr": "II"
+    },
+    {
+     "thema": "Eine Ethik für alle Kulturen? – Der Anspruch moralischer Normen auf interkulturelle Geltung",
+     "sach": [
+      "rekonstruieren einen relativistischen und einen universalistischen ethischen Ansatz in ihren Grundgedanken und erläutern diese Ansätze an Beispielen",
+      "erklären im Kontext der erarbeiteten ethischen Ansätze vorgenommene begriffliche Unterscheidungen (u.a. Relativismus, Universalismus)."
+     ],
+     "methoden": [
+      "beschreiben Phänomene der Lebenswelt vorurteilsfrei ohne verfrühte Klassifizierung (MK1)",
+      "identifizieren in einfacheren philosophischen Texten Sachaussagen und Werturteile, Begriffsbestimmungen, Behauptungen, Begründungen, Erläuterungen und Beispiele (MK4)",
+      "entwickeln mit Hilfe heuristischer Verfahren (u.a. Gedankenexperimenten, fiktiven Dilemmata) eigene philosophische Gedanken (MK6)",
+      "argumentieren unter Ausrichtung an einschlägigen philosophischen Argumentationsverfahren (u.a. Toulmin-Schema) (MK8).",
+      "stellen grundlegende philosophische Sachverhalte und Zusammenhänge in präsentativer Form (u.a. Visualisierung, bildliche und szenische Darstellung) dar (MK11)",
+      "stellen philosophische Probleme und Problemlösungsbeiträge in ihrem Für und Wider dar (MK13)."
+     ],
+     "urteil": [
+      "bewerten begründet die Tragfähigkeit der behandelten ethischen Ansätze zur Orientierung in gegenwärtigen gesellschaftlichen Problemlagen",
+      "erörtern unter Bezugnahme auf einen relativistischen bzw. universalistischen Ansatz der Ethik das Problem der universellen Geltung moralischer Maßstäbe."
+     ],
+     "handlung": [
+      "entwickeln auf der Grundlage philosophisc her Ansätze verantwortbare Handlungsperspektiven für aus der Alltagswirklichkeit erwachsende Problemstellungen (HK1)",
+      "vertreten im Rahmen rationaler Diskurse im Unterricht ihre eigene Position und gehen dabei auch auf andere Perspektiven ein (HK3)."
+     ],
+     "inhaltsfelder": [
+      1
+     ],
+     "schwerpunkte": [],
+     "zeit": 15,
+     "nr": "III"
+    },
+    {
+     "thema": "Wann darf und muss der Staat die Freiheit des Einzelnen begrenzen? – Die Frage nach dem Recht und der Gerechtigkeit von Strafen",
+     "sach": [
+      "rekonstruieren unterschiedliche rechtsphilosophische Ansätze zur Begründung für Eingriffe in die Freiheitsrechte der Bürger in ihren Grundgedan ken und grenzen diese Ansätze voneinander ab",
+      "erklären im Kontext der erarbeiteten rechtsphilosophischen Ansätze vorgenommene begriffliche Unterscheidungen (u.a. Recht, Gerechtigkeit)."
+     ],
+     "methoden": [
+      "arbeiten aus Phänomenen der Lebenswelt und präsentativen Materialien verallgemeinernd relevante philosophische Fragen heraus (MK2)",
+      "bestimmen elementare philosophische Begriffe mit Hilfe definitorischer Verfahren (MK7)",
+      "argumentieren unter Ausrich tung an einschlägigen philosophischen Argumentationsverfahren (u. a. Toulmin-Schema) (MK8). ▪ stellen philosophische Probleme und Problemlösungsbeiträge in ihrem Für und Wider dar (MK13)."
+     ],
+     "urteil": [
+      "bewerten begründet die Tragfähigkeit der behandelten rechtsphilosophischen Ansätze zur Orientierung in gegenwärtigen gesellschaftlichen Problemlagen",
+      "erörtern unter Bezugnahme auf rechtsphilosophische Ansätze die Fragena ch den Grenzen staatlichen Handelns sowie das Problem, ob grundsätzlich der Einzelne oder der Staat den Vorrang haben sollte."
+     ],
+     "handlung": [
+      "entwickeln auf der Grundlage philosophischer Ansätze verantwortbare Handlungsperspektiven für aus der Alltagswirklichkeit erwachsende Problemstellungen (HK1)",
+      "rechtfertigen eigene Entscheidungen und Handlungen durch philosophisch dimensionierte Begründungen (HK2)."
+     ],
+     "inhaltsfelder": [
+      1
+     ],
+     "schwerpunkte": [
+      "Umfang und Grenzen staatlichen Handelns"
+     ],
+     "zeit": 15,
+     "nr": "IV"
+    },
+    {
+     "thema": "Kann der Glaube an die Existenz Gottes vernünftig begründet werden? – Religiöse Vorstellungen und ihre Kritik",
+     "sach": [
+      "stellen metaphysische Fragen (u.a. die Frage eines Lebens nach dem Tod, die Frage nach der Existenz Gottes) als Herausforderungen für die Vernunfterkenntnis dar und entwickeln eigene Ideen zu ihrer Beantwortung und Beantwortbarkeit",
+      "rekonstruieren einen affirmativen und einen skeptischen Ansatz zur Beantwortung metaphysischer Fragen (u. a. die Frage eines Lebens nach dem Tod, die Frage nach der Existenz Gottes) in ihren wesentlichen Aussagen und grenzen diese Ansätze gedanklich und begrifflich voneinander ab."
+     ],
+     "methoden": [
+      "ermitteln in einfacheren philosophischen Texten das diesen jeweils zugrundeliegende Problem bzw. ihr Anliegen sowie die zentrale These (MK3)",
+      "identifizieren in einf acheren philosophischen Texten Sachaussagen und Werturteile, Begriffsbestimmungen, Behauptungen, Begründungen, Erläuterungen und Beispiele (MK4)",
+      "analysieren die gedankliche Abfolge von philosophischen Texten und interpretieren wesentliche Aussagen (MK5).",
+      "stellen grundlegende philosophische Sachverhalte in diskursiver Form strukturiert dar (MK10)",
+      "geben Kernaussagen und Grundgedanken einfacherer philosophischer Texte in eigenen Worten und distanziert, unter Zuhilfen ahme eines angemessenen Textbeschreibungsvokabulars, wieder und verdeutlichen den interpretatorischen Anteil (MK12)."
+     ],
+     "urteil": [
+      "beurteilen die innere Stimmigkeit der behandelten metaphysischen bzw. skeptisc hen Ansätze",
+      "bewerten begründet die Tragfähigkeit der behandelten metaphysischen bzw. skeptischen Ansätze zur Orientierung in grundlegenden Fragen des Daseins und erörtern ihre jeweiligen Konsequenzen für das diesseitige Leben und seinen Sinn."
+     ],
+     "handlung": [
+      "rechtfertigen eigene Entscheidungen und Handlungen durch philosophisch dimensionierte Begründungen (HK2)",
+      "vertreten im Rahmen rationaler Diskurse im Unterricht ihre eigene Position und gehen dabei auch auf andere Perspektiven ein (HK3)."
+     ],
+     "inhaltsfelder": [
+      2
+     ],
+     "schwerpunkte": [
+      "Metaphysische Probleme als Herausforderung für die Vernunfterkenntnis",
+      "Prinzipien und Reichweite menschlicher Erkenntnis"
+     ],
+     "zeit": 15,
+     "nr": "V"
+    },
+    {
+     "thema": "Was können wir mit Gewissheit erkennen? – Grundlagen und Grenzen menschlicher Erkenntnis",
+     "sach": [
+      "rekonstruieren einen empiristisch -realistischen Ansatz und einen rationalistisch - konstruktivistischen Ansatz zur Erklärung von Erkenntnis in ihren Grundgedanken und grenzen diese Ansätze voneinander ab."
+     ],
+     "methoden": [
+      "beschreiben Phänomene der Lebenswelt vorurteilsfrei ohne verfrühte Klass ifizierung (MK1)",
+      "arbeiten aus Phänomenen der Lebenswelt und präsentativen Materialien verallgemeinernd relevante philosophische Fragen heraus (MK2)",
+      "identifizieren in einfacheren philosophischen Texten Sachaussagen und Werturteile, Begriffsbestimmungen, Behauptungen, Begründungen, Erläuterungen und Beispiele (MK4)",
+      "entwickeln mit Hilfe heuristischer Verfahren (u.a. Gedankenexperimenten, fiktiven Dilemmata) eigene philosophische Gedanken (MK6).",
+      "stellen grundlegende philosophische Sachverhalte und Zusammenhänge in präsentativer Form (u.a. Visualisierung, bildliche und szenische Darstellung) dar (MK11)",
+      "geben Kernaussagen und Grundgedanken einfacherer philosophischer Texte in eigenen Worten und distanziert, unter Zu hilfenahme eines angemessenen Textbeschreibungsvokabulars, wieder und verdeutlichen den interpretatorischen Anteil (MK12)."
+     ],
+     "urteil": [
+      "erörtern Voraussetzungen und Konsequenzen der behandelten erkenntnistheoretischen Ansätze (u. a. für Wissenschaft, Religion, Philosophie bzw. Metaphysik)."
+     ],
+     "handlung": [
+      "beteiligen sich mit philosophisch dimensionierten Beiträgen an der Diskussion allgemein - menschlicher und gegenwärtiger gesellschaftlich-politischer Fragestellungen (HK4)."
+     ],
+     "inhaltsfelder": [
+      2
+     ],
+     "schwerpunkte": [
+      "Prinzipien und Reichweite menschlicher Erkenntnis",
+      "Eigenart philosophischen Fragens und Denkens"
+     ],
+     "zeit": 15,
+     "nr": "VI"
+    }
+   ],
+   "summe": 90
+  },
+  "Q1": {
+   "kurs": {
+    "GK": {
+     "uvs": [
+      {
+       "thema": "Ist die Kultur die Natur des Menschen? – Der Mensch als Produkt der natürlichen Evolution und die Bedeutung der Kultur für seine Entwicklung",
+       "sach": [
+        "rekonstruieren eine den Menschen als Kulturwesen bestimmende anthropologische Position in ihren wesentlichen gedanklichen Schritten und erläutern diese Bestimmung an zentralen Elementen von Kultur."
+       ],
+       "methoden": [
+        "ermitteln in philosophischen Texten das diesen jeweils zugrundeliegende Problem bzw. ihr Anliegen sowie die zentrale These (MK3)",
+        "identifizieren in philosophischen Texten Sachaussagen und Werturteile, Begriffsbestimmungen, Behauptungen, Begründungen, Voraussetzungen, Folgerungen, Erläuterungen und Beispiele (MK4).",
+        "stellen philosophische Sachverhalte und Zusammenhänge in diskursiver Form strukturiert und begrifflich klar dar (MK10)."
+       ],
+       "urteil": [
+        "bewerten kriteriengeleitet und argumentativ die Tragfähigkeit der behandelten anthropologischen Positionen zur Orientierung in grundlegenden Fragen des Daseins",
+        "erörtern unter Bezug auf die behandelte kulturanthropologische Position argumentativ abwägend die Frage nach dem Menschen als Natur-oder Kulturwesen."
+       ],
+       "handlung": [
+        "beteiligen sich mit philosophischen B eiträgen an der Diskussion allgemein-menschlicher und gegenwärtiger gesellschaftlich-politischer Fragestellungen (HK4)."
+       ],
+       "inhaltsfelder": [
+        3,
+        5
+       ],
+       "schwerpunkte": [
+        "Der Mensch als Natur-und Kulturwesen",
+        "Der Primat der Gemeinschaft als Prinzip staatsphilosophischer Legitimation"
+       ],
+       "zeit": 15,
+       "nr": "VII"
+      },
+      {
+       "thema": "Ist der Mensch mehr als Materie? – Das Leib-Seele-Problem",
+       "sach": [
+        "analysieren ein dualistisches und ein monistisches Denkmodell zum Leib-Seele-Problem in seinen wesentlichen gedanklichen Schritten und grenzen diese Denkmodelle voneinander ab",
+        "erklären philosophische Begriffe und Positionen, die das Verhältnis von Leib und Seele unterschiedlich bestimmen (u.a. Dualismus, Monismus, Materialismus, Reduktionismus)."
+       ],
+       "methoden": [
+        "arbeiten aus Phänomenen der Lebenswelt und präsentativen Materialien abstrahierend relevante philosophische Fragen heraus und erläutern diese (MK2)",
+        "analysieren den gedanklichen Aufbau und die zentralen Argumentationsstrukturen in philosophischen Texten und interpretieren wesentliche Aussagen (MK5)",
+        "entwickeln mit Hilfe heuristischer Verfahren (u.a. Gedankenexperimenten, fiktiven Dilemmata) eigene philosophische Gedanken und erläutern diese (MK6)",
+        "bestimmen philosophische Begriffe mit Hilfe verschiedener definitorischer Verfahren (MK7). ▪ stellen argumentativ abwägend philosophische Probleme und Problemlösungsbeiträge, auch in Form eines Essays, dar (MK13)."
+       ],
+       "urteil": [
+        "erörtern unter Bezug aufdi e behandelten dualistischen und materialistisch - reduktionistischen Denkmodelle argumentativ abwägend die Frage nach dem Verhältnis von Leib und Seele."
+       ],
+       "handlung": [
+        "vertreten im Rahmen rationaler Diskurse im Unterricht ihre eigene Position und gehen dabei auch argumentativ auf andere Positionen ein (HK3)."
+       ],
+       "inhaltsfelder": [
+        3
+       ],
+       "schwerpunkte": [
+        "Das Verhältnis von Leib und Seele",
+        "Der Mensch als freies und selbstbestimmtes Wesen"
+       ],
+       "zeit": 15,
+       "nr": "VIII"
+      },
+      {
+       "thema": "Ist der Mensch ein freies Wesen? - Deterministische und existentialistische Auffassung des Menschen im Vergleich",
+       "sach": [
+        "stellen die Frage nach der Freiheit des menschlichen Willens als philosophisches Problem dar und grenzen dabei Willens-von Handlungsfreiheit ab",
+        "analysieren und rekonstruieren eine die Willensfreiheit verneinende und eine sie bejahende Auffassung des Menschen in ihren wesentlichen gedankli chen Schritten und ordnen diese als deterministisch bzw. indeterministisch ein",
+        "erläutern eine die Willensfreiheit verneinende und eine sie bejahende Auffassung des Menschen im Kontext von Entscheidungssituationen."
+       ],
+       "methoden": [
+        "beschreiben Phänomene der Lebenswelt vorurteilsfrei und sprachlich genau ohne verfrühte Klassifizierung (MK1)",
+        "arbeiten aus Phänomenen der Lebenswelt und präsentativen Materialien abstrahierend relevante philosophische Fragen heraus und erläutern diese (MK2)",
+        "bestimmen philosophische Begriffe mit Hilfe definitorischer Verfahren und grenzen sie voneinander ab (MK7)",
+        "argumentieren unter bewusster Ausrichtung an einschlägigen philosophischen Argumentationsverfahren (u.a. Toulmin-Schema) (MK8).",
+        "stellen argumentativ abwägend philosophische Probleme und Problemlösungsbeiträge, auch in Form eines Essays, dar (MK13)."
+       ],
+       "urteil": [
+        "erörtern abwägend Konsequenzen einer deterministischen und indeterministischen Position im Hinblick auf die Verantwortung des Menschen für sein Handeln (u. a. die Frage nach dem Sinn von Strafe)",
+        "erörtern unter Bezug auf die deterministische und indeterministische Position argumentativ abwägend die Frage nach der menschlichen Freiheit und ihrer Denkmöglichkeit."
+       ],
+       "handlung": [
+        "rechtfertigen eigene Entscheidungen und Handlungen durch plausible Gründe und Argumente im Rückgriff aufd as Orientierungspotential philosophischer Positionen und Denkmodelle (HK2)."
+       ],
+       "inhaltsfelder": [
+        3,
+        4
+       ],
+       "schwerpunkte": [
+        "Der Mensch als freies und selbstbestimmtes Wesen",
+        "Grundsätze eines gelingenden Lebens"
+       ],
+       "zeit": 15,
+       "nr": "IX"
+      },
+      {
+       "thema": "Wie kann das Leben gelingen? – Eudämonistische Auffassungen eines guten Lebens",
+       "sach": [
+        "rekonstruieren eine philosophische Antwort auf die Frage nach dem gelingenden Leben in ihren wesentlichen gedanklichen Schritten und ordnen sie in das ethische Denken ein."
+       ],
+       "methoden": [
+        "identifizieren in philosophischen Texten Sach aussagen und Werturteile, Begriffsbestimmungen, Behauptungen, Begründungen, Voraussetzungen, Folgerungen, Erläuterungen und Beispiele (MK4).",
+        "stellen argumentativ abwägend philosophische Probleme und Problemlösungsbeiträge dar, auch in Form eines Essays (MK13)."
+       ],
+       "urteil": [
+        "bewerten kriteriengeleitet und argumentierend die Tragfähigkeit der behandelten eudämonistischen Position zur Orientierung in Fragen der eigenen Lebensführung."
+       ],
+       "handlung": [
+        "rechtfertigen eigene Entscheidungen und Handlungen durch plausible Gründe und Argumente und nutzen dabei das Orientierungspotential philosophischer Positionen und Denkmodelle (HK2)",
+        "vertreteni m Rahmen rationaler Diskurse im Unterricht ihre eigene Position und gehen dabei auch argumentativ auf andere Positionen ein (HK3)."
+       ],
+       "inhaltsfelder": [
+        3,
+        4
+       ],
+       "schwerpunkte": [
+        "Grundsätze eines gelingenden Lebens",
+        "Das Verhältnis von Leib und Seele"
+       ],
+       "zeit": 10,
+       "nr": "X"
+      },
+      {
+       "thema": "Soll ich mich im Handeln am Kriterium der Nützlichkeit oder der Pflicht orientieren? – Utilitaristische und deontologische Positionen im Vergleich",
+       "sach": [
+        "analysieren und rekonstruieren ethische Positionen, die auf dem Prinzip der Nützlichkeit und auf dem Prinzip der Pflicht basieren, in ihren wesentlichen gedanklichen Schritten",
+        "erläutern die behandelten ethischen Positionen an Beispielen und ordnen sie in das ethische Denken ein."
+       ],
+       "methoden": [
+        "ermitteln in philosophischen Texten das diesen jeweils zugrundeliegende Problem bzw. ihr Anliegen sowie die zentrale These (MK3)",
+        "analysieren den gedanklichen Aufbau und die zentralen Argumentationsstrukturen in philosophischen Texten und interpretieren wesentliche Aussagen (MK5)",
+        "entwickeln mit Hilfe heuristischer Verfahren (u.a. Gedan kenexperimenten, fiktiven Dilemmata) eigene philosophische Gedanken und erläutern diese (MK6).",
+        "geben Kernaussagen und Gedanken - bzw. Argumentationsgang philosophischer Texte in eigenen Worten und distanziert, unter Zuhilfenahme eines angemessenen Textbeschreibungsvokabulars, wieder und belegen Interpretationen durch korrekte Nachweise (MK12)."
+       ],
+       "urteil": [
+        "bewerten kriteriengeleitet und arg umentierend die Tragfähigkeit utilitaristischer und deontologischer Grundsätze zur Orientierung in Fragen moralischen Handelns."
+       ],
+       "handlung": [
+        "rechtfertigen eigene Entscheidungen und Handlungen durch plausible Gründe und Argumente und nutzen dabei das Orientierungspotential philosophischer Positionen und Denkmodelle (HK2)."
+       ],
+       "inhaltsfelder": [
+        3,
+        4
+       ],
+       "schwerpunkte": [
+        "Nützlichkeit und Pflicht als ethische Prinzipien",
+        "Der Mensch als freies und selbstbestimmtes Wesen"
+       ],
+       "zeit": 20,
+       "nr": "XI"
+      }
+     ],
+     "summe": 90
+    },
+    "LK": {
+     "uvs": [
+      {
+       "thema": "Ist die Kultur die Natur des Menschen? – Der Mensch als Produkt der natürlichen Evolution und die Bedeutung der Kultur für seine Entwicklung",
+       "sach": [
+        "rekonstruieren den Menschen als Kultur wesen bestimmende anthropologische Positionen in ihrem gedanklichen Aufbau und erläutern differenziert die Bedeutung zentraler Elemente von Kultur für den Menschen."
+       ],
+       "methoden": [
+        "ermitteln in komplexeren philosophischen Texten das diesen jeweils zugrundeliegende Problem bzw. ihr Anliegen sowie die zentrale These (MK3)",
+        "identifizieren in komplexeren philosophischen Texten Sachaussagen und Werturteile, Begriffsbestimmungen, Behauptungen, Begrün dungen, Voraussetzungen, Folgerungen, Erläuterungen und Beispiele (MK4).",
+        "stellen komplexere philosophische Sachverhalte und Zusammenhänge in diskursiver Form strukturiert und begrifflich klar dar (MK10)."
+       ],
+       "urteil": [
+        "bewerten kriteriengeleitet und differenziert argumentierend die Tragfähigkeit der behandelten anthropologischen Positionen zu r Orientierung in grundlegenden Fragen des Daseins",
+        "erörtern unter Bezugnahme auf die behandelten kulturanthropologischen Positionen argumentativ abwägend die Frage nach der Bed eutung von Natur und Kultur für den Menschen."
+       ],
+       "handlung": [
+        "beteiligen sich mit fundierten phil osophischen Beiträgen an der Diskussion allgemein-menschlicher und gegenwärtiger gesellschaftlich-politischer Fragestellungen (HK4)."
+       ],
+       "inhaltsfelder": [
+        3,
+        5
+       ],
+       "schwerpunkte": [
+        "Der Mensch als Natur-und Kulturwesen",
+        "Gemeinschaft als Prinzip staatsphilosophischer Legitimation"
+       ],
+       "zeit": 18,
+       "nr": "VII"
+      },
+      {
+       "thema": "Ist der Mensch mehr als Materie? – Das Leib-Seele-Problem im Licht der modernen Gehirnforschung",
+       "sach": [
+        "analysieren ein dualistisches und ein monistisches Denkmodell zum Leib-Seele-Problem in seinem argumentativen Aufbau und grenzen diese Denkmodelle voneinander ab",
+        "erklären philosophische Begr iffe und Positionen, die das Verhältnis von Leib und Seele unterschiedlich festlegen (u.a. Dualismus, Monismus, Materialismus, Reduktionismus)."
+       ],
+       "methoden": [
+        "beschreiben Phänomene der Lebenswelt vorurteilsfrei und sprachlich genau in bewusster Abgrenzung von wissenschaftlichen Klassifizierungen (MK1)",
+        "arbeiten aus Phänomenen der Lebenswelt und präsentativen Materialien abstrahierend relevante philosophische Fragen heraus und erläutern diese differenziert (MK2)",
+        "analysieren den Argumentationsaufbau und die Argumentationsstruktur in komplexeren philosophischen Texten und interpretieren wesentliche Aussagen (MK5)",
+        "entwickeln mit Hilfe heuristischer Verfahren (u. a. Gedankenexperimenten, fiktiven Dilemmata) eigene philosophische Gedanken und gedankliche Modelle und erläutern diese differenziert (MK6)",
+        "bestimmen philosophische Begriffe mit Hilfe verschiedener definitorischer Verfahren und grenzen sie voneinander ab (MK7)."
+       ],
+       "urteil": [
+        "bewerten kriteriengeleitet und differenziert argumentierend die Tragfähigkeit der behandelten anthropologischen Positionen zu r Orientierung in grundlegenden Fragen des Daseins."
+       ],
+       "handlung": [
+        "vertreten im Rahmen rationaler Diskurse im Unterricht ihre eigene Position und gehen argumentativ und klärend auch auf andere Positionen ein (HK3)."
+       ],
+       "inhaltsfelder": [
+        3
+       ],
+       "schwerpunkte": [
+        "Das Verhältnis von Leib und Seele",
+        "Der Mensch als freies und selbstbestimmtes Wesen"
+       ],
+       "zeit": 18,
+       "nr": "VIII"
+      },
+      {
+       "thema": "Lässt sich Bewusstsein funktionalistisch erklären? – Das Menschenbild der Neurowissenschaften und der Forschungen zur Künstlichen Intelligenz in philosophischer Perspektive",
+       "sach": [
+        "analysieren eine aus den Ergebnissen der Neurowissenschaften und der Forschungen zur Künstlichen Intelligenz (KI) abgeleitete reduktionistische Auffassung des Menschen in ihrem argumentativen Aufbau",
+        "rekonstruieren eine philosophische Position, die sich kritisch mit einem reduktionistischen Menschenbild auseinandersetzt, in ihrem argumentativen Aufbau."
+       ],
+       "methoden": [
+        "arbeiten aus Phänomenen der Lebenswelt und präsentativen Materialien abstrahierend relevante philosophische Fragen heraus und erläutern diese differenziert (MK2)",
+        "identifizieren in komplexeren philosophischen Texten Sachaussagen und Werturteile, Begriffsbestimmungen, Behauptungen, Begründungen, Voraussetzungen, Folgerungen, Erläuterungen und Beispiele (MK4).",
+        "geben Kernaussagen und Gedanken - bzw. Argumentationsgang komplexe rer philosophischer Texte in eigenen Worten und distanziert, unter Zuhilfenahme eines angemessenen Textbeschreibungsvokabulars, wieder, erläutern ihr Vorgehen und belegen Interpretationen durch korrekte Nachweise (MK12)",
+        "stellen in einer differenzierten Ar gumentation (u.a. philosophische Disputation, philosophischer Essay) abwägend philosophische Probleme und Problemlösungsbeiträge dar (MK13)."
+       ],
+       "urteil": [
+        "beurteilen die argumentative Konsistenz und Kohärenze iner aus den Forschungen zur Künstlichen Intelligenz abgeleiteten naturalisierenden bzw. reduktionistischen Erklärung des Menschen.",
+        "erörtern unter Bezugnahme auf eine reduktionistische Erklärung des Menschen und deren Kritik argumentativ abwägend die Frage, ob und inwiefern das Wesen des Menschen naturalisierend bzw. funktionalistisch erklärbar ist."
+       ],
+       "handlung": [
+        "vertreten im Rahmen rationaler Diskurse im Unterricht ihre eigene Position und gehen argumentativ und klärenda uch auf andere Positionen ein (HK3)."
+       ],
+       "inhaltsfelder": [
+        3,
+        6
+       ],
+       "schwerpunkte": [
+        "Das Menschbild der Neurowissenschaften und der Forschungen zur Künstlichen Intelligenz",
+        "Das Verhältnis von Leib und Seele",
+        "Der Mensch als freies und selbstbestimmtes Wesen",
+        "Der Anspruch der Naturwissenschaften auf Objektivität"
+       ],
+       "zeit": 16,
+       "nr": "IX"
+      },
+      {
+       "thema": "Ist der Mensch ein freies Wesen? - Psychoanalytische und existentialistische Auffassung des Menschen im Vergleich",
+       "sach": [
+        "stellen die Frage nach der Freiheit des menschlichen Willens als philosophisches Problem dar und grenzen dabei Willens-von Handlungsfreiheit ab",
+        "analysieren und rekonstruieren eine komplexere die Willensfreiheit verneinende und verschiedene sie bejahende Auffassungen des Me nschen in ihrem argumentativen Aufbau und ordnen diese als deterministisch bzw. indeterministisch ein",
+        "erläutern eine die Willensfreiheit verneinende und die sie bejahenden Auffassungen des Menschen im Kontext von Entscheidungssituationen."
+       ],
+       "methoden": [
+        "beschreiben Phänomene der Lebenswelt vorurteilsfrei und sprachlichge nau in bewusster Abgrenzung von wissenschaftlichen Klassifizierungen (MK1)",
+        "arbeiten aus Phänomenen der Lebenswelt und präsentativen Materialien abstrahierend relevante philosophische Fragen heraus und erläutern diese differenziert (MK2)",
+        "bestimmen philosophische Begriffe mit Hilfe verschiedener definitorischer Verfahren und grenzen sie voneinander ab (MK7)",
+        "entwickeln unter bewusster Ausrichtung an einschlägigen Argumentationsverfahren (u. a. Toulmin-Schema) komplexere philosophische Begründungszusammenhänge (MK8).",
+        "stellen in einer differenzierten Argumentation (u.a. philosophische Disputation, philosophischer Essay) abwägend komplexerep hilosophische Probleme und Problemlösungsbeiträge dar (MK13)."
+       ],
+       "urteil": [
+        "erörtern abwägend Konsequenzen einer deterministischen und indeterministischen Position im Hinblick auf die Verantwortung des Menschen für sein Handeln (u. a. die Frage nach dem Sinn von Strafe, dem Stellenwert von Erziehung)",
+        "erörtern argumentativ abwägend das Problem der Willensfreiheit und ihrer Denkmöglichkeit sowie die Frage nach der Relevanzun terschiedlicher Positionen zur Willensfreiheit für das Selbstverständnis des Menschen."
+       ],
+       "handlung": [
+        "entwickeln auf der Grundlage philosophischer Positionen und Denkmodelle differenziert verantwortbare Handlungsoptionen für au s der Alltagswirklichkeit erwachsende Problemstellungen (HK1)."
+       ],
+       "inhaltsfelder": [
+        3,
+        4
+       ],
+       "schwerpunkte": [
+        "Der Mensch als freies und selbstbestimmtes Wesen",
+        "Grundsätze eines gelingenden Lebens"
+       ],
+       "zeit": 18,
+       "nr": "X"
+      },
+      {
+       "thema": "Wie kann das Leben gelingen? – Eudämonistische Auffassungen eines guten Lebens",
+       "sach": [
+        "rekonstruieren unterschiedliche philosophische Antworten auf die Frage nach dem gelingenden Leben in ihrem gedanklichen Aufbau, vergleichen diese und ordnen sie in das eudämonistische Denken ein."
+       ],
+       "methoden": [
+        "identifizieren in komplexeren philosophischen Texten Sachaussagen und Werturteile, Begriffsbestimmungen, Behauptun gen, Begründungen, Voraussetzungen, Folgerungen, Erläuterungen und Beispiele (MK4).",
+        "geben Kernaussagen und Gedanken - bzw. Argumentationsgang komplexerer philosophischer Texte in eigenen Worten und distanziert, unter Zuhilfenahme eines angemessenen Textbeschreibungsvokabulars, wieder, erläutern ihr Vorgehen und belegen Interpretationen durch korrekte Nachweise (MK12)",
+        "stellen in einer differenzierten Argumentation (u.a. philosophische Di sputation, philosophischer Essay) abwägend philosophische Probleme und Problemlösungsbeiträge dar (MK13)."
+       ],
+       "urteil": [
+        "erörtern unter Bezugnahme auf die behandelten eudämonistischen Positionen argumentativ ab wägend die Frage nach den Grundsätzen, die zu einem gelingenden Leben beitragen und vor anderen verantwortbar sind."
+       ],
+       "handlung": [
+        "rechtfertigen eigene Entscheidungen und Handlungen differenziert durch plausible Gründe und Argumente im Rückgriff auf das Orientierungspotential philosophischer Positionen und Denkmodelle (HK2)",
+        "vertreten im Rahmen rationaler Diskurse im Unterricht ihre eigene Position und gehen argumentativ und klärend auch auf andere Positionen ein (HK3)."
+       ],
+       "inhaltsfelder": [
+        3,
+        4
+       ],
+       "schwerpunkte": [
+        "Grundsätze eines gelingenden Lebens",
+        "Das Verhältnis von Leib und Seele"
+       ],
+       "zeit": 16,
+       "nr": "XI"
+      },
+      {
+       "thema": "Soll ich mich im Handeln am Kriterium der Nützlichkeit oder der Pflicht orientieren? – Utilitaristische und deontologische Positionen im Vergleich",
+       "sach": [
+        "analysieren auf quantitativer und qualitativer Nutzenabwägung wie auf Präferenzabwägung basierende ethische Positionen in ihrem gedanklichen Aufbau und grenzen sie voneinander ab",
+        "erläutern die verschiedenen utilitaristischen Positionen an unterschiedlichen Beispielen und in diversen Anwendungskontexten",
+        "analysieren eine auf dem Prinzip der Pflicht basierende ethische Position in ihrem gedanklichen Aufbau und vergleichen sie mit konsequentialistischen bzw. utilitaristischen Positionen."
+       ],
+       "methoden": [
+        "ermitteln in komplexeren philosophischen Texten das diesen jeweils zugrundeliegende Problem bzw. ihr Anliegen sowie die zentrale These (MK3)",
+        "analysieren den Argumentationsaufbau und die Argumentationsstruktur in komplexeren philosophischen Texten und interpreti eren wesentliche Aussagen (MK5)",
+        "entwickeln mit Hilfe heuristischer Verfahren (u.a. Gedankenexperimenten, fiktiven Dilemmata) eigene philosophische Gedankenu nd erläutern diese differenziert (MK6).",
+        "geben Kernaussagen und Gedanken - bzw. Argumentationsgang komplexerer philosophischer Texte in eigenen Worten und distanziert, unter Zuhilfenahme eines angemessenen Textbeschreibungsvokabulars, wieder, erläutern ihr Vorgehen und belegen Interp retationen durch korrekte Nachweise (MK12)."
+       ],
+       "urteil": [
+        "bewerten differenziert die Überzeugungskraft der behandelten utilitaristischen und deontologischen Positionen im Hinblick auf die Klärung moralisch relevanter Phänomene (u. a. Gewissen, Pflichtenkollision)",
+        "bewerten kriteriengeleitet und differenziert argumentierend die Tragfähigkeit der utilitaristischen und deontologischen Posit ionen zur Orientierung zur Orientierung in Fragen moralischen Handelns",
+        "erörtern unter Bezugnahme auf die behandelten utilitaristischen und deontologischen Positionen argumentativ abwägend die Frage, ob sich das Handeln eher am Nutzenprinzip oder am kategorischen Imperativ ausrichten soll."
+       ],
+       "handlung": [
+        "rechtfertigen eigene Entscheidungen und Handlungen differenziert durch plausible Gründe und Argumente im Rückgriff auf das Orientierungspotential philosophischer Positionen und Denkmodelle (HK2)."
+       ],
+       "inhaltsfelder": [
+        3,
+        4
+       ],
+       "schwerpunkte": [
+        "Nützlichkeit und Pflicht als ethische Prinzipien",
+        "Der Mensch als freies und selbstbestimmtes Wesen"
+       ],
+       "zeit": 24,
+       "nr": "XII"
+      },
+      {
+       "thema": "",
+       "sach": [
+        "rekonstruieren eine das Gefühl als Grundlage für moralische O rientierung setzende ethische Position in ihrem gedanklichen Aufbau und ordnen sie als emotivistischen Ansatz ein",
+        "rekonstruieren eine die diskursive Vernunft als Grundlage für moralische Orientierungen setzende ethische Position in ihremg edanklichen Aufbau und ordnen sie als diskurstheoretischen Ansatz ein."
+       ],
+       "methoden": [
+        "ermitteln in komplexeren philosophischen Texten das diesen jeweils zugrundeliegende Problem bzw. ihr Anliegen sowie die zentrale These (MK3)",
+        "analysieren den Argumentationsaufbau und die Argumentationsstruktur in komplexeren philosophischen Texten und interpretieren wesentliche Aussagen (MK5).",
+        "stellen komplexere philosophische Sachverhalte und Zusammenhänge in diskursiver Form strukturiert und begrifflich klar dar (MK10)",
+        "stellen in einer differenzierten Argumentation (u.a. philosophische Disputation philosophischer Essay) abwägend komplexereph ilosophische Probleme und Problemlösungsbeiträge dar (MK13)."
+       ],
+       "urteil": [
+        "erörtern unter Bezugnahme auf die behandelte emotivistische und diskurstheoretische ethische Position argumentativ abwägendd ie Frage nach den angemessenen Grundlagen moralischer Orientierungen und ihrer Legitimation."
+       ],
+       "handlung": [
+        "vertreten im Rahmen rationaler Diskurse im Unterricht ihre eigene Position und gehen argumentativ und klärend auch auf andere Positionen ein (HK3)."
+       ],
+       "inhaltsfelder": [
+        4,
+        5
+       ],
+       "schwerpunkte": [
+        "Unterschiedliche Grundlagen moralischer Orientierungen",
+        "Konzepte von Demokratie und sozialer Gerechtigkeit"
+       ],
+       "zeit": 20,
+       "nr": "XIII"
+      },
+      {
+       "thema": "Gibt es eine Verantwortung des Menschen für die Natur? –Ethische Grundsätze im Anwendungskontext der Ökologie",
+       "sach": [
+        "rekonstruieren eine Verantwortung in ethisc hen Anwendungskontexten begründende Position (u.a. für die Bewahrung der natürlichen Lebensgrundlagen, für den Schutz der Menschenwürde in der Medizinethik) in ihrem gedanklichen Aufbau und erläutern sie an Beispielen."
+       ],
+       "methoden": [
+        "arbeiten aus Phänomenen der Lebenswelt und präsentativen Materialien abstrahierend relevante philosophische Fragen heraus und erläutern diese differenziert (MK2)",
+        "entwickeln unter bewusster Ausrichtung an einschläg igen Argumentationsverfahren (u.a. Toulmin-Schema) komplexere philosophische Argumentationen (MK8)",
+        "recherchieren Informationen, Hintergrundwissen sowie die Bedeutung von Fremdwörtern und Fachbegriffen unter Zuhilfenahme von (auch digitalen) Lexika und fachspezifischen Nachschlagewerken und Darstellungen (MK9).",
+        "stellen in einer differenzierten Argumentation (u.a. philosophische Disputation, philosophischer Essay) abwägend komplexere philosophische Probleme und Problemlösungsbeiträge dar (MK13)."
+       ],
+       "urteil": [],
+       "handlung": [
+        "entwickeln auf der Grundlage philosophischer Positionen und Denkmodelle differenziert verantwortbare Handlungsoptionen für au s der Alltagswirklichkeit erwachsende Problemstellungen (HK1)",
+        "beteiligen sich mit fundierten philosophischen Beiträgen an der Diskussion allgemein-menschlicher und gegenwärtiger gesellschaftlich-politischer Fragestellungen (HK4)."
+       ],
+       "inhaltsfelder": [
+        3,
+        4
+       ],
+       "schwerpunkte": [
+        "Verantwortung in Fragen angewandter Ethik",
+        "Der Mensch als Natur-und Kulturwesen"
+       ],
+       "zeit": 20,
+       "nr": "XIV"
+      }
+     ],
+     "summe": 150
+    }
+   }
+  },
+  "Q2": {
+   "kurs": {
+    "GK": {
+     "uvs": [
+      {
+       "thema": "Legimitation staatlicher Herrschaft in der Antike",
+       "sach": [
+        "stellen die Legitimationsbedürftigkeit staatlicher Herrschaft als philosophisches Problem dar und entwickeln eigene Lösungsansätze in Form von möglichen Staatsmodellen",
+        "rekonstruieren ein am Prinzip der Gemeinschaft orientiertes Staatsmodell in seinen wesentlichen Gedankenschritten."
+       ],
+       "methoden": [
+        "analysieren den gedanklichen Aufbau und die zentralen Argumentationsstru kturen in philosophischen Texten und interpretieren wesentliche Aussagen (MK5)",
+        "entwickeln Hilfe heuristischer Verfahren (u. a. Gedankenexperimenten, fiktiven Dilemmata) eigene philosophische Gedanken und erläutern diese (MK 6).",
+        "stellen philosophische Sachverhalte und Zusammenhänge in diskursiver Form strukturiert und begrifflich klar dar (MK10)",
+        "stellen philosophische Sachverhalte und Zusammenhänge in präsentativer Form (u.a. Visualisierung, bildliche und szenische Darstellung) dar (MK11)",
+        "geben Kernaussagen und Gedanken - bzw. Argumentationsgang philosophischer Texte in eigenen Worten und distanziert, unter Zuhilfenahme eines angemessenen Textbeschreibungsvokabulars, wieder und belegen Interpretationen durch korrekte Nachweise (MK12)."
+       ],
+       "urteil": [
+        "erörtern abwägend anthropologische Voraussetzungen der behandelten Staatsmodelle und deren Konsequenzen",
+        "bewerten kriteriengeleitet und argume ntierend die Tragfähigkeit der behandelten Staatsmodelle zur Orientierung in gegenwärtigen politischen Problemlagen."
+       ],
+       "handlung": [],
+       "inhaltsfelder": [
+        3,
+        5
+       ],
+       "schwerpunkte": [
+        "Gemeinschaft als Prinzip staatsphilosophischer Legitimation",
+        "Der Mensch als Natur-und Kulturwesen"
+       ],
+       "zeit": 12,
+       "nr": "XIII"
+      },
+      {
+       "thema": "Wie lässt sich eine staatliche Ordnung vom Primat des Individuums aus rechtfertigen? – Kontraktualistische Staatstheorien im Vergleich",
+       "sach": [
+        "analysieren unterschiedliche Modelle zur Rechtfertigung des Staates durch einen Gesellschaftsvertrag in ihren wesentlichen Gedankenschritten und stellen gedankliche Bezüge zwischen ihnen im Hinblick auf die Konzeption des Naturzustandes und der Staatsform her",
+        "erklären den Begriff des Kontraktualismus als Form der Staatsbegründung und ordnen die behandelten Modelle in die kontraktualistische Begründungstradition ein."
+       ],
+       "methoden": [
+        "identifizieren in philosophischen Texten Sachaussagen und Werturteile, Begriffsbestimmungen, Behauptungen, Begründungen, Voraussetzungen, Folgerungen, Erläuterungen und Beispiele (MK4)",
+        "analysieren den gedanklichen Aufbau und die zentralen Argumentationsstrukturen in philosophischen Texten und interpretieren wesentliche Aussagen (MK5).",
+        "stellen philosophische Sachverh alte und Zusammenhänge in diskursiver Form strukturiert und begrifflich klar dar (MK10)",
+        "stellen philosophische Sachverhalte und Zusammenhänge in präsentativer Form (u.a. Visualisierung, bildliche und szenische Darstellung) dar (MK11)."
+       ],
+       "urteil": [
+        "erörtern abwägend anthropologische Voraussetzungen der behandelten kontraktualistischen Staatsmodelle und deren Konsequenzen",
+        "bewerten die Überzeugungskraft der behandelten kontraktualistischen Staatsmodelle im Hinblick auf die Legitimation eines Staates angesichts der Freiheitsansprüche des Individuums",
+        "bewerten kriteriengeleitet und argumentierend die Tragfähigkeit der behandelten Staatsmodelle zur Orientierung in gegenwärtigen politischen Problemlagen."
+       ],
+       "handlung": [],
+       "inhaltsfelder": [
+        3,
+        5
+       ],
+       "schwerpunkte": [
+        "Individualinteresse und Gesellschaftsvertrag als Prinzip staatsphilosophischer Legitimation",
+        "Der Mensch als Natur-und Kulturwesen"
+       ],
+       "zeit": 14,
+       "nr": "XIV"
+      },
+      {
+       "thema": "Lassen sich die Ansprüche des Einzelnen auf politische Mitwirkung und gerechte Teilhabe in einer staatlichen Ordnung realisieren? – Moderne Konzepte von Demokratie und sozialer Gerechtigkeit auf dem Prüfstand",
+       "sach": [
+        "analysieren und rekonstruieren eine sozialphilosophische Position zur Bestimmung von Demokratie und eine zur Bestimmung von sozialer Gerechtigkeit in ihren wesentlichen Gedankenschritten."
+       ],
+       "methoden": [
+        "arbeiten aus Phänomenen der Lebenswelt und präsentativen Materialien abstrahierend relevante philosophische Fragen heraus und erläutern diese (MK2)",
+        "recherchieren Informationen, Hinterg rundwissen sowie die Bedeutung von Fremdwörtern und Fachbegriffen unter Zuhilfenahme von (auch digitalen) Lexika und fachspezifischen Nachschlagewerken (MK9).",
+        "stellen philosophische S achverhalte und Zusammenhänge in diskursiver Form strukturiert und begrifflich klar dar (MK10)."
+       ],
+       "urteil": [
+        "bewerten kriteriengeleitet und argumentierend die Tragfähigkeit der behandelten Konzepte zur Bestimmung von Demokratie und sozialer Gerechtigkeit",
+        "erörtern unter Bezug auf die behandelten Positionen zur Bestimmung von Demokratie und sozialer Gerechtigkeit argumentativ abwägend die Frage nach dem Recht auf Widerstand in einer Demokratie."
+       ],
+       "handlung": [
+        "entwickeln auf der Grundlage philosophischer Positionen und Denkmodelle verantwortbare Handlungsoptionen für aus der Alltagswirklichkeit erwachsende Problemstellungen (HK1)",
+        "beteiligen sich mit philosophischen Beiträgen an d er Diskussion allgemein-menschlicher und gegenwärtiger gesellschaftlich-politischer Fragestellungen (HK4)."
+       ],
+       "inhaltsfelder": [
+        4,
+        5
+       ],
+       "schwerpunkte": [
+        "Konzepte von Demokratie und sozialer Gerechtigkeit",
+        "Verantwortung in ethischen Anwendungskontexten"
+       ],
+       "zeit": 12,
+       "nr": "XV"
+      },
+      {
+       "thema": "Was leisten sinnliche Wahrnehmung und Verstandestätigkeit für die wissenschaftliche Erkenntnis? – rationalistische und empiristische Modelle im Vergleich",
+       "sach": [
+        "analysieren eine rationalistische und eine empiristische Position zur Klärung der Grundlagen wissenschaftlicher Erkenntnis in ihren wesentlichen argumentativen Schritten und grenzen diese voneinander ab."
+       ],
+       "methoden": [
+        "beschreiben Phänomene der Lebenswelt vorurteilsfrei und sprachlich genau ohne verfrühte Klassifizierung (MK1)",
+        "ermitteln in philosophischen Texten das diesen jeweils zugrundeliegende Problem bzw. ihr Anliegen sowie die zentrale These (MK3)",
+        "analysieren den gedanklichen Aufbau und die zentralen Argumentationsstrukturen in philosophischen Texten und interpretieren wesentliche Aussagen (MK5)",
+        "entwickeln mit Hilfe heuristischer Verfahren (u.a. Gedankenexperimenten, fiktiven Dilemmata) eigene philosophische Gedanken und erläutern diese (MK6).",
+        "geben Kernaussagen und Gedanken - bzw. Argumentationsgang philosophischer Texte in eigenen Worten und distanziert, unter Zuhilfenahme eines angemessenen Textbeschreibungsvokabulars, wieder und belegen Interpretationen durch korrekte Nachweise (MK12)."
+       ],
+       "urteil": [
+        "beurteilen die argumentative Konsistenz der behandelten rationalistischen und empiristischen Position",
+        "erörtern abwägend Konsequenzen einer empiristischen und einer rationalistischen Bestimmung der Grundlagen der Naturwissenschaften für deren Erkenntnisanspruch."
+       ],
+       "handlung": [
+        "vertreten im Rahmen rationaler Diskurse im Unterricht ihre eigene Position und gehen dabei auch argumentativ auf andere Positionen ein (HK3)."
+       ],
+       "inhaltsfelder": [
+        6
+       ],
+       "schwerpunkte": [
+        "Erkenntnistheoretische Grundlagen der Wissenschaften"
+       ],
+       "zeit": 12,
+       "nr": "XVI"
+      },
+      {
+       "thema": "Wie gelangen die Wissenschaften zu Erkenntnissen? – Anspruch und Verfahrensweisen der neuzeitlichen Naturwissenschaften",
+       "sach": [
+        "stellen die Frage nach dem besonderen Erkenntnis - und Geltungsanspruch der Wissenschaften als erkenntnistheoretisches Problem dar und erläutern dieses an Beispielen aus ihrem Unterricht in verschiedenen Fächern",
+        "rekonstruieren ein den Anspruch der Naturwissenschaften auf Objektivität reflektierendes Denkmodell in seinen wesentlichen argumentativen Schritten, erläutern es an Beispielen aus der Wissenschaftsgeschichte und stellen es kritisch in Frage",
+        "erklären zentrale Begriffe des behandelten wissenschaftstheoretischen Denkmodells."
+       ],
+       "methoden": [
+        "bestimmen philosophische Begriffe mit Hilfe definitorischer Verfahren und gre nzen sie voneinander ab (MK7)",
+        "argumentieren unter bewusster Ausrichtung an einschlägigen philosophischen Argumentationsverfahren (u.a. Toulmin-Schema) (MK8)",
+        "recherchieren Informationen, Hintergrundwissen sowie die Bedeutung von Fremdwörtern und Fachbegri ffen unter Zuhilfenahme von (auch digitalen) Lexika und fachspezifischen Nachschlagewerken (MK9).",
+        "stellen philosophische Sachverhalte und Zusammenhänge in präsentativer Form (u.a. Visualisierung, bildliche und szenische Darstellung) dar (MK11)",
+        "stellen argumentativ abwägend philosophische Probleme und Problemlösungsbeiträge dar, auch in Form eines Essays (MK13)."
+       ],
+       "urteil": [
+        "erörtern abw ägend erkenntnistheoretische Voraussetzungen des behandelten wissenschaftstheoretischen Modells und seine Konsequenzen für das Vorgehen in den Naturwissenschaften",
+        "erörtern unter Bezug auf das erarbeitete wissenschaftstheoretische Denkmodell argumentativ abwägend die Frage nach der Fähigkeit der Naturwissenschaften, objektive Erkenntnis zu erlangen."
+       ],
+       "handlung": [
+        "beteiligen sich mit philosophischen Beiträgen an der Diskussion allgemein-menschlicher und gegenwärtiger gesellschaftlich-politischer Fragestellungen (HK4)."
+       ],
+       "inhaltsfelder": [
+        4,
+        5,
+        6
+       ],
+       "schwerpunkte": [
+        "Der Anspruch der Naturwissenschaften auf Objektivität",
+        "Verantwortung in ethischen Anwendungskontexten",
+        "Konzepte von Demokratie (und sozialer Gerechtigkeit)"
+       ],
+       "zeit": 10,
+       "nr": "XVII"
+      }
+     ],
+     "summe": 60
+    },
+    "LK": {
+     "uvs": [
+      {
+       "thema": "Welche Ordnung der Gemeinschaft ist gerecht? - Ständestaat und Philosophenkönigtum als Staatsideal",
+       "sach": [
+        "stellen die Legitimationsbedürftigkeit staa tlicher Herrschaft als philosophisches Problem dar und entwickeln eigene Lösungsansätze in Form von möglichen Staatsmodellen",
+        "rekonstruieren ein am Primat der Gemeinschaft orientiertes Staatsmodell in seinem gedanklichen Aufbau."
+       ],
+       "methoden": [
+        "analysieren den gedanklichen Aufbau und die zentralen Argumentationsstrukturen in komplexeren philosophischen Texten und interpretieren wesentliche Aussagen (MK5)",
+        "entwickeln mit Hilfe heuristischer Verfa hren (u.a. Gedankenexperimenten, fiktiven Dilemmata) eigene philosophische Gedanken und erläutern diese differenziert (MK6).",
+        "stellen komplexere philosophische Sachverhalte und Zusammenhänge in diskursiver Form strukturiert und begrifflich klar dar (MK10)",
+        "stellen komplexere philosophische Sachverhalte und Zusammenhänge in präsentativer Form (u.a. Visualisierung, bildliche und szenische Darstellung) dar (MK11)."
+       ],
+       "urteil": [
+        "erörtern abwägend die anthropologischen Voraussetzungen des behandelten Staatsmodells und dessen Konsequenzen."
+       ],
+       "handlung": [],
+       "inhaltsfelder": [
+        3,
+        5
+       ],
+       "schwerpunkte": [
+        "Gemeinschaft als Prinzip staatsphilosophischer Legitimation",
+        "Der Mensch als Natur-und Kulturwesen"
+       ],
+       "zeit": 14,
+       "nr": "XV"
+      },
+      {
+       "thema": "Wie lässt sich eine staatliche Ordnung vom Primat des Individuums aus rechtfertigen? – Kontraktualistische Staatstheorien im Vergleich",
+       "sach": [
+        "analysieren unterschiedliche Modelle zur Rechtfertigung des Staates durch einen Gesellschaftsvertrag in ihrem gedanklichen Aufbau und stellen ged ankliche Bezüge zwischen ihnen im Hinblick auf die Konzeption des Naturzustandes und der Staatsform her",
+        "erläutern den Begriff des Kontraktualismus als Form der Staatsbegründung und ordnen die behandelten Modelle in die kontraktualistische Begründungstradition ein."
+       ],
+       "methoden": [
+        "identifizieren in komplexeren philosophischen Texten Sachaussagen und Werturteile, Begriffsbestimmungen, Behauptungen, Begründungen, Voraussetzungen, Folgerungen, Erläuterungen und Beispiele (MK4)",
+        "analysieren den Argumentationsaufbau und die Argumentationsstruktur in komplexeren philosophischen Texten und interpretieren wesentliche Aussagen (MK5)",
+        "bestimmen philosophische Begriffe mit Hilfe verschiedener definitorisch er Verfahren und grenzen sie voneinander ab (MK7).",
+        "stellen komplexere philosophische Sachverhalte und Zusammenhänge in diskursiver Form strukturiert und begrifflich klar dar (MK10)",
+        "stellen komplexere philosophische Sachverhalte und Zusammenhänge in präsentativer Form (u.a. Visualisierung, bildliche und szenische Darstellung) dar (MK11)."
+       ],
+       "urteil": [
+        "erörtern abwägend die anthropologischen Voraussetzungen der behandelten kontraktualistischen Staatsmodelle und deren Konsequenzen",
+        "bewerten differenziert die Überzeugungskraft der behandelten kontraktualistischen Staatsmodelle im Hinblick auf die Legitimation eines Staates angesichts der Freiheitsansprüche des Individuums",
+        "bewerten kriteriengeleitet und differenziert argumentierend die Tragfähigkeit der behandelten kontraktualistischen Staatsmodelle zur Orientierung in gegenwärtigen politischen Problemlagen."
+       ],
+       "handlung": [],
+       "inhaltsfelder": [
+        3,
+        5
+       ],
+       "schwerpunkte": [
+        "Individualinteresse und Gesellschaftsvertrag als Prinzip staatsphiloso phischer Legitimation",
+        "Der Mensch als Natur-und Kulturwesen"
+       ],
+       "zeit": 16,
+       "nr": "XVI"
+      },
+      {
+       "thema": "Lassen sich die Ansprüche des Einzelnen auf politische Mitwirkung und gerechte Teilhabe in einer staatlichen Ordnung realisieren? – Moderne Konzepte von Demokratie und sozialer Gerechtigkeit auf dem Prüfstand",
+       "sach": [
+        "analysieren und rekonstruieren eine staatsphilosophische Position zur Bestimmung von Demokratie und eine zur Bestimmung von sozialer Gerechtigkeit in ihrem gedanklichen Aufbau."
+       ],
+       "methoden": [
+        "arbeiten aus Phänomenen der Lebenswelt und präsentativen Materialien abstrahierend relevante philosophische Fragen heraus und erläutern diese differenziert (MK2)",
+        "identifizieren in komplexeren philosophischen Texten S achaussagen und Werturteile, Begriffsbestimmungen, Behauptungen, Begründungen, Voraussetzungen, Folgerungen, Erläuterungen und Beispiele (MK4)",
+        "recherchieren Informationen, Hintergrundwissen sowie die Bedeutung von Fremdwörtern und Fachbegriffen unter Zuhi lfenahme von (auch digitalen) Lexika und fachspezifischen Nachschlagewerken und Darstellungen (MK9).",
+        "stellen komplexere philosophische Sachverhalte und Zusammenhänge in diskursiver Fo rm strukturiert und begrifflich klar dar (MK10)."
+       ],
+       "urteil": [
+        "bewerten kriteriengeleitet und differenziert argumentierend die Tragfähigkeit der behandelten Positionen zur Bestimmung von Demokratie und sozialer Gerechtigkeit",
+        "erörtern argumentativ abwägend das Problem einer unter gegenwärtigen Verhältnissen tragfähigen Bestimmung von Demokratie und sozialer Gerechtigkeit und greifen dabei auf relevante Positionen zu ihrer Bestimmung zurück."
+       ],
+       "handlung": [
+        "entwickeln auf der Grundlage philosophischer Positionen und Denkmodelle differenziert verantwortbare Handlungsoptionen für aus der Alltagswirklichkeit erwachsende Problemstellungen (HK1)",
+        "beteiligen sich mit fundierten philosoph ischen Beiträgen an der Diskussion allgemein - menschlicher und gegenwärtiger gesellschaftlich-politischer Fragestellungen (HK4)."
+       ],
+       "inhaltsfelder": [
+        3,
+        4
+       ],
+       "schwerpunkte": [
+        "Konzepte von Demokratie und sozialer Gerechtigkeit",
+        "Verantwortung in ethischen Anwendungskontexten"
+       ],
+       "zeit": 16,
+       "nr": "XVII"
+      },
+      {
+       "thema": "Wie lassen sich zwischenstaatliche Konflikte auf Dauer vermeiden? – Bedingungen einer stabilen Friedensordnung in einer globalisierten Welt",
+       "sach": [
+        "stellen globale Probleme als Bedrohung für die friedliche Koexistenz der Völker und Staaten dar und entwickeln eigene Lösungsbeiträge zum Zusammenleben der Völ ker und Staaten angesichts dieser Probleme",
+        "rekonstruieren ein Denkmodell zur Herstellung bzw. Sicherung des internationalen Friedens in seiner gedanklichen Abfolge und ordnen es in die Tradition der Theorien zur politischen Friedenssicherung ein."
+       ],
+       "methoden": [
+        "beschreiben reale und fiktive Phänomene der Lebenswelt vorurteilsfrei und sprachlich genau in bewusster Abgrenzung von wissenschaftlichen Klassifizierungen (MK1)",
+        "entwickeln mit Hilfehe uristischer Verfahren (u. a. Gedankenexperimenten, fiktiven Dilemmata) eigene philosophische Gedanken und gedankliche Modelle und erläutern sie differenziert (MK6)",
+        "recherchieren Informationen, Hintergrundwissen sowie die Bedeutung von Fremdwörtern und Fac hbegriffen unter Zuhilfenahme von (auch digitalen) Lexika und fachspezifischen Nachschlagewerken und Darstellungen (MK9).",
+        "geben Kernaussagen und Gedanken - bzw. Argumentationsgang kompl exerer philosophischer Texte in eigenen Worten und distanziert, unter Zuhilfenahme eines angemessenen Textbeschreibungsvokabulars, wieder, erläutern ihr Vorgehen und belegen Interpretationen durch korrekte Nachweise (MK12).",
+        "stellen in einer differenzierten Argumentation (u.a. philosophische Disputation, philosophischer Essay) abwägend komplexere philosophische Probleme und Problemlösungsbeiträge dar (MK13)."
+       ],
+       "urteil": [
+        "bewerten kriteriengeleitet und differenz iert argumentierend die Tragfähigkeit des behandelten Denkmodells zur Herstellung bzw. Sicherung des internationalen Friedens",
+        "erörtern argumentativ abwägend die Frage nach der sichersten Weltfriedensordnung und greifen dabei auf relevante Denkmodelle zur Bestimmung der internationalen Beziehungen zwischen den Völkern bzw. Staaten zurück."
+       ],
+       "handlung": [
+        "beteiligen sich mit fundierten philosophischen Beiträgen an der Diskussion allgemein - menschlicher und gegenwärtiger gesellschaftlich-politischer Fragestellungen (HK4)."
+       ],
+       "inhaltsfelder": [
+        3
+       ],
+       "schwerpunkte": [],
+       "zeit": 14,
+       "nr": "XVIII"
+      },
+      {
+       "thema": "Was leisten sinnliche Wahrnehmung und Verstandestätigkeit für die wissenschaftliche Erkenntnis? – Rationalistische und empiristische Modelle im Vergleich",
+       "sach": [
+        "analysieren eine rationalistische und eine empiristische Position zur Klärung der Grundlagen wissenschaftlicher Erkenntnis in ihrem argumentativen Aufbau und grenzen diese voneinander ab",
+        "erklären die begrifflichen Unterschiede zwischen Empirismus und Rationalismus im Kontext der Frage nach den erkenntnistheoretischen Grundlagen der Naturwissenschaften",
+        "analysieren und rekonstruieren eine erkenntnistheoretische Position, die im Kontext der Begründung des Erkenntnisanspruchs neuzeitlicher Naturwissenschaften Rationalismus und Empirismus verbindet, in ihrem argumentativen Aufbau."
+       ],
+       "methoden": [
+        "ermitteln in komplexeren philosophischen Texten das diesen jeweils zugrundeliegende Problem bzw. ihr Anliegen sowie die zentrale These (MK3)",
+        "analysieren den Argumentationsaufbau und die Argumentationsstruktur in komplexeren philosophischen Texten und interpretieren wesentliche Aussagen (MK5)",
+        "entwickeln mit Hilfe heuristischer Verfahren (u. a. Gedankenexperimenten, fiktiven Dilemmata) eigene philosophische Gedanken und gedankliche Modelle und erläutern sie differenziert (MK6).",
+        "geben Kernaussagen und Gedanken - bzw. Argumentationsgang komplexerer philosophischer Texte in eigenen Worten und distanziert, unter Zuhilfenahme eines angemessenen Textbeschreibungsvokabulars, wieder, erläutern ihr Vorgehen und belegen Interpretationen durch korrekte Nachweise (MK12)."
+       ],
+       "urteil": [
+        "beurteilen die argumentative Konsistenz und Kohärenz der rationalistischen und empiristischen Position",
+        "erörtern abwägend Konsequenzen einer empiristischen und einer rationalistischen Bestimmung der Grundlagen der Naturwissenschaften für deren Erkenntnisanspruch."
+       ],
+       "handlung": [
+        "vertreten im Rahmen rationaler Diskurse im Unterricht ihre eigene Position und gehen argumentativ und klärend auch auf andere Positionen ein (HK3)."
+       ],
+       "inhaltsfelder": [
+        3,
+        6
+       ],
+       "schwerpunkte": [
+        "Erkenntnistheoretische Grundlagen der Wissenschaften"
+       ],
+       "zeit": 14,
+       "nr": "XIX"
+      },
+      {
+       "thema": "Wie gelangen die Wissenschaften zu Erkenntnissen? – Anspruch und Verfahrensweisen der modernen Naturwissenschaften",
+       "sach": [
+        "stellen die Frage nach dem besonderen Erkenntnis - und Geltungsanspruch der Wissenschaften als erkenntnistheoretisches Problem dar und erläutern dieses diff erenziert an Beispielen aus ihrem Unterricht in verschiedenen Fächern",
+        "rekonstruieren ein den Anspruch der Naturwissenschaften auf Objektivität reflektierendes Denkmodell in seinem argumentativen Aufbau und erläutern es an Beispielen aus der Wissenschaftsgeschichte."
+       ],
+       "methoden": [
+        "bestimmen philosophische Begriffe mit Hilfe verschiedener definitorischer Verfahren und grenzen sie voneinander ab (MK7)",
+        "entwickeln unter bewusster Ausrichtung an e inschlägigen Argumentationsverfahren (u. a. Toulmin-Schema) komplexere philosophische Begründungszusammenhänge (MK8)",
+        "recherchieren Informationen, Hintergrundwissen sowie die Bedeutung von Fremdwörtern und Fachbegriffen unter Zuhilfenahme von (auch digital en) Lexika und fachspezifischen Nachschlagewerken und Darstellungen (MK9)",
+        "stellen komplexere philosophische Sachverhalte und Zusammenhänge in diskursiver Form strukturiert und begrifflich klar dar (MK10).",
+        "stellen komplexere philosophische Sachverhalte und Zusammenhänge in präsentativer Form (u.a. Visualisierung, bildliche und szenische Darstellung) dar (MK11)."
+       ],
+       "urteil": [
+        "erörtern unter Bezugnahme auf die Rationalismus und Empirismus verbindende erkenntnistheoretische Position argumentativ abwägend die Frage nach der Begründung des Anspruchs von (naturwissenschaftlicher) Erkenntnis auf Allgemeingültigkeit sowie das Problem der Berechtigung dieses Anspruchs."
+       ],
+       "handlung": [
+        "beteiligen sich mit fundierten philosophischen Beiträgen an der Diskussion allgemein - menschlicher und gegenwärtiger gesellschaftlich-politischer Fragestellungen (HK4)."
+       ],
+       "inhaltsfelder": [
+        4,
+        5,
+        6
+       ],
+       "schwerpunkte": [
+        "Der Anspruch der Naturwissenschaften auf Objektivität",
+        "Verantwortung in ethischen Anwendungskontexten",
+        "Konzepte von Demokratie (und sozialer Gerechtigkeit)"
+       ],
+       "zeit": 14,
+       "nr": "XX"
+      },
+      {
+       "thema": "Was ist das Besondere geisteswissenschaftlicher Erkenntnis? – Anspruch und Verfahren der Geisteswissenschaften",
+       "sach": [
+        "stellen Unterschiede der Erkenntnisverfahren in den Natur-und Geisteswissenschaften dar und erläutern sie an Beispielen",
+        "rekonstruieren ein philosophisches Denkmodell zur Bestimmung der spezifischen Erkenntnismethoden der Geisteswissensc haften (Hermeneutik) in Abgrenzung von den Naturwissenschaften in seinem gedanklichen Aufbau."
+       ],
+       "methoden": [
+        "beschreiben Phänomene der Lebenswelt vorurteilsfrei und sprachlich genau in bewusster Abgrenzung von wissenschaftlichen Klassifizierungen (MK1)",
+        "analysieren den Argumentationsaufbau und die Argumentationsstruktur in komplexeren philosophischen Texten und interpretieren wesentliche Aussagen (MK5)",
+        "bestimmen philosophische Begriffe mit Hi lfe verschiedener definitorischer Verfahren und grenzen sie voneinander ab (MK7).",
+        "stellen in einer differenzierten Argumentation (u. a. philosophische Disputation, philosophischer Essay) abwägend komplexere philosophische Probleme und Problemlösungsbeiträge dar (MK13)."
+       ],
+       "urteil": [
+        "erörtern abwägend erkenntnistheoretische Voraussetzungen des behandelten hermeneutischen Modells und dessen K onsequenzen für das Vorgehen in den Geisteswissenschaften",
+        "erörtern argumentativ abwägend die Frage nach der Reichweite und dem Wahrheitsanspruch naturwissenschaftlicher und geisteswissenschaftlichen Erkenntnis sowie das Problem, welche Erkenntnisform das Selbstverständnis des Menschen in der Zukunft prägen soll."
+       ],
+       "handlung": [
+        "vertreten im Rahmen rationaler Diskurse im Unterricht ihre eigene Position und gehen argumentativ und klärend auch auf andere Positionen ein (HK3)."
+       ],
+       "inhaltsfelder": [
+        3,
+        5,
+        6
+       ],
+       "schwerpunkte": [],
+       "zeit": 12,
+       "nr": "XXI"
+      }
+     ],
+     "summe": 100
+    }
+   }
+  }
+ }
+}</script>
+<script>
+"use strict";
+const DATA = JSON.parse(document.getElementById("philo-daten").textContent);
+
+const STUFEN = ["EF","Q1","Q2"];
+const TILE = {"EF":"var(--if2)","Q1":"var(--if3)","Q2":"var(--if5)"};
+const SUB = {"EF":"Einführungsphase","Q1":"Qualifikationsphase","Q2":"Abiturjahr"};
+const LABEL = {"EF":"Einführungsphase (EF)","Q1":"Qualifikationsphase 1 (Q1)","Q2":"Qualifikationsphase 2 (Q2)"};
+
+const INTROS = {
+  "EF":"Was heißt Philosophieren? Die Einführungsphase behandelt Welterklärung, Menschenbild, Handeln und die Frage, was wir wissen können.",
+  "Q1":"Anthropologie und Ethik: das Selbstverständnis des Menschen, Freiheit, Kultur, Leib und Seele, dazu ethische Grundpositionen. Die Inhalte unterscheiden sich nach Kursart.",
+  "Q2":"Staatsphilosophie und Wissenschaftstheorie: Legitimation staatlicher Ordnung, Grundsätze eines gelingenden Lebens, Geltungsansprüche der Wissenschaften."
+};
+
+const ROMAN_LIST = ["I","II","III","IV","V","VI","VII","VIII","IX","X"];
+
+function esc(t){const d=document.createElement("div");d.textContent=t;return d.innerHTML;}
+/* MK/HK-Verweise für die Lese-Ansicht entfernen */
+function lesbar(t){
+  return t.replace(/\s*\((?:MK|HK)\d+[^)]*\)\s*/g," ").replace(/\s{2,}/g," ").trim().replace(/[,.]$/,"");
+}
+
+/* ---------- Legende ---------- */
+const legend = document.getElementById("legend");
+Object.entries(DATA.ifNamen).forEach(([n,name])=>{
+  const s=document.createElement("span");
+  s.innerHTML=`<i style="background:var(--if${n})"></i>${esc(name)}`;
+  legend.appendChild(s);
+});
+
+/* ---------- Stufen-Buttons ---------- */
+const stufenEl = document.getElementById("stufen");
+STUFEN.forEach(st=>{
+  const b=document.createElement("button");
+  b.className="stufe-btn"; b.type="button";
+  b.style.setProperty("--tile",TILE[st]);
+  b.setAttribute("aria-pressed","false");
+  b.dataset.stufe=st;
+  b.innerHTML=`<span class="num">${st}</span><span class="sub">${SUB[st]}</span><span class="dot"></span>`;
+  b.addEventListener("click",()=>select(st,null,true));
+  stufenEl.appendChild(b);
+});
+
+/* ---------- Stufenansicht ---------- */
+const view = document.getElementById("view");
+let currentStufe=null, currentKurs="GK";
+
+function stufenDaten(){
+  const d=DATA.stufen[currentStufe];
+  return d.kurs ? d.kurs[currentKurs] : d;
+}
+
+function select(stufe, kurs, push){
+  currentStufe=stufe;
+  if(DATA.stufen[stufe].kurs){ currentKurs = kurs || currentKurs || "GK"; }
+  document.querySelectorAll(".stufe-btn").forEach(b=>
+    b.setAttribute("aria-pressed", b.dataset.stufe===stufe ? "true":"false"));
+  render();
+  if(push){
+    const h = DATA.stufen[stufe].kurs ? `#${stufe.toLowerCase()}-${currentKurs.toLowerCase()}` : `#${stufe.toLowerCase()}`;
+    history.replaceState(null,"",h);
+    view.scrollIntoView({behavior: matchMedia("(prefers-reduced-motion: reduce)").matches ? "auto":"smooth", block:"start"});
+  }
+}
+
+function render(){
+  const d=DATA.stufen[currentStufe];
+  const sd=stufenDaten();
+  const uvs=sd.uvs;
+  const idx = STUFEN.indexOf(currentStufe);
+
+  let head=`<div class="view-head"><h2>${esc(LABEL[currentStufe])}</h2>`;
+  if(d.kurs){
+    head+=`<div class="kurs-toggle" role="group" aria-label="Kursart wählen">
+      <button type="button" aria-pressed="${currentKurs==="GK"}" data-kurs="GK">Grundkurs</button>
+      <button type="button" aria-pressed="${currentKurs==="LK"}" data-kurs="LK">Leistungskurs</button></div>`;
+  }
+  if(sd.summe){ head+=`<span class="summe">${sd.summe} Unterrichtsstunden</span>`; }
+  head+=`</div>`;
+
+  const pfad=`<div class="pfad" aria-hidden="true">${STUFEN.map((s,i)=>
+    `<i class="${i<=idx?"on":""}" style="--tile:${TILE[currentStufe]}"></i>`).join("")}</div>`;
+
+  const intro=`<p class="intro">${esc(INTROS[currentStufe]||"")}</p>`;
+
+  const list = uvs.map((uv,i)=>{
+    const feld = uv.inhaltsfelder[0] || 1;
+    const feldNamen = uv.inhaltsfelder.map(n=>DATA.ifNamen[n]).join(" · ");
+    const zeit = uv.zeit ? ` · ${uv.zeit} Std.` : "";
+    const seqChips = uv.schwerpunkte.map(s=>`<span>${esc(s)}</span>`).join("");
+    const lernItems = uv.sach.map(k=>`<li>${esc(lesbar(k))}</li>`).join("");
+    const urteilItems = uv.urteil.map(k=>`<li>${esc(lesbar(k))}</li>`).join("");
+    const origM = uv.methoden.map(k=>`<li>${esc(k)}</li>`).join("");
+    const origH = uv.handlung.map(k=>`<li>${esc(k)}</li>`).join("");
+    return `<article class="uv" data-open="false" style="--feld:var(--if${feld});--feld-soft:var(--if${feld}-soft)">
+      <button class="uv-head" type="button" aria-expanded="false">
+        <span class="uv-num">${uv.nr||ROMAN_LIST[i]}</span>
+        <span class="uv-titel"><span class="t">${esc(uv.thema)}</span><span class="f">${esc(feldNamen)}${zeit}</span></span>
+        <svg class="uv-chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg>
+      </button>
+      <div class="uv-body"><div class="uv-body-inner"><div class="uv-content">
+        ${seqChips?`<div><h4>Darum geht es im Unterricht</h4><div class="chips">${seqChips}</div></div>`:""}
+        ${lernItems?`<div><h4>Das lernen die Schüler*innen</h4><ul class="lernen">${lernItems}</ul></div>`:""}
+        ${urteilItems?`<div><h4>Beurteilen und bewerten</h4><ul class="lernen urteil">${urteilItems}</ul></div>`:""}
+        <details class="original">
+          <summary>Lehrplan im Original ansehen</summary>
+          <div class="orig-inner">
+            ${origM?`<div><h5>Methodenkompetenz</h5><ul>${origM}</ul></div>`:""}
+            ${origH?`<div><h5>Handlungskompetenz</h5><ul>${origH}</ul></div>`:""}
+            <div><h5>Inhaltsfelder</h5><ul>${uv.inhaltsfelder.map(n=>`<li>IF ${n} (${esc(DATA.ifNamen[n])})</li>`).join("")}</ul></div>
+          </div>
+        </details>
+      </div></div></div>
+    </article>`;
+  }).join("");
+
+  view.innerHTML = head + pfad + intro + `<div class="uv-list">${list}</div>`;
+
+  view.querySelectorAll(".kurs-toggle button").forEach(b=>
+    b.addEventListener("click",()=>select(currentStufe,b.dataset.kurs,true)));
+  view.querySelectorAll(".uv-head").forEach(btn=>
+    btn.addEventListener("click",()=>{
+      const uv=btn.closest(".uv");
+      const open=uv.dataset.open==="true";
+      uv.dataset.open=String(!open);
+      btn.setAttribute("aria-expanded",String(!open));
+    }));
+}
+
+/* ---------- Intro-Film: nach einem Durchlauf durch Standbild ersetzen ---------- */
+(function(){
+  const v=document.getElementById("introFilm");
+  if(!v) return;
+  function standbild(){
+    const img=document.createElement("img");
+    img.src="pkg-intro-philo-ende.jpg";
+    img.alt="Schulinternes Curriculum Philosophie, Paul-Klee-Gymnasium Overath";
+    img.className="intro-film";
+    img.width=1280; img.height=720;
+    v.replaceWith(img);
+  }
+  if(matchMedia("(prefers-reduced-motion: reduce)").matches){
+    standbild();
+    return;
+  }
+  v.addEventListener("ended", standbild);
+  v.play?.().catch(standbild);
+})();
+
+/* ---------- Deep-Link ---------- */
+(function init(){
+  const h=(location.hash||"").replace("#","").toLowerCase();
+  let st="EF", kurs=null;
+  for(const s of STUFEN){
+    if(h===s.toLowerCase()){st=s;break;}
+    if(h===s.toLowerCase()+"-gk"){st=s;kurs="GK";break;}
+    if(h===s.toLowerCase()+"-lk"){st=s;kurs="LK";break;}
+  }
+  select(st,kurs,false);
+})();
+</script>
+</body>
+</html>
